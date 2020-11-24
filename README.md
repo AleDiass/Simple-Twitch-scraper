@@ -13,8 +13,8 @@
 		 - Twitch User Target : User123
 		 
 - ##### Output Example :
-		-	User : User123
-		-	Live Stream Started At : 00:10:32
+		- User : User123
+		- Live Stream Started At : 00:10:32
 		- Spectators : 2345 Viewers
 	
 	
