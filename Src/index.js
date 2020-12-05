@@ -49,8 +49,9 @@ const StartPuppeteer = async(User) => {
       else if(OnlineCheck){
         const viewers = document.querySelector("p[data-a-target='animated-channel-viewers-count']").innerText
         const StreamTime = document.getElementsByClassName('live-time')[0].innerText
-        
-        return {online:true,viewers,StreamTime, error:false}
+        const title = document.querySelector("h2[data-a-target]").innerText;
+        const game = document.querySelector("a[data-a-target=stream-game-link] span").innerText;
+        return {online:true,viewers,StreamTime, title , game ,error:false}
       }
 
       
@@ -68,11 +69,10 @@ const StartPuppeteer = async(User) => {
       console.log(` \n \n ${User} is Offline`)
     }
     if(CheckUserStatus.online){
-      console.log(` \n \n User: ${User} \n Live Stream Started At:  ${CheckUserStatus.StreamTime} \n spectators: ${CheckUserStatus.viewers}`, )
+      console.log(` \n \n User: ${User} \n Game: ${CheckUserStatus.game} \n Live Stream Started At: \n ${CheckUserStatus.StreamTime} \n spectators: ${CheckUserStatus.viewers} \n Stream Title: \n """ \n ${CheckUserStatus.title} \n\n"""`, )
     }
       
     
-    
-    browser.close();
+      browser.close();
 
 }; 
